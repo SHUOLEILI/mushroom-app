@@ -33,6 +33,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# connect to mongodb
+gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
