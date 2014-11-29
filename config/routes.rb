@@ -1,4 +1,12 @@
-Rails.application.routes.draw do
+MushroomApp::Application.routes.draw do
+  root 'static#home'
+
+  resources :consumers
+  resources :user_sessions
+
+  get 'login' => 'user_sessions#new', :as => :login
+  post 'logout' => 'user_sessions#destroy', :as => :logout
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

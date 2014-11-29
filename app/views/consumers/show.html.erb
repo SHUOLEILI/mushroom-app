@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<style>
+body {
+    background-color: #b0c4de;
+    text-shadow: 5px 5px 5px #FF0000;
+
+}
+</style>
+<p>
+  <strong>Email:</strong>
+  <%= @consumer.email %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @consumer.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @consumer.password %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @consumer.name %>
+</p>
+
+<p>
+  <strong>Geneder:</strong>
+  <%= @consumer.geneder %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @consumer.age %>
+</p>
+
+<%= link_to 'Edit', edit_consumer_path(@consumer) %> |
+<%= link_to 'Back', consumers_path %>

@@ -1,0 +1,17 @@
+<div>
+  <h1>Welcome to Mushroom</h1>
+ 
+  
+  <%=image_tag("1.jpg", :alt => "machine cat") %>
+  <%=image_tag("2.jpg", :alt => "machine cat") %>
+
+
+  <div id="nav">
+ 	<%= link_to 'Signup', new_consumer_path %>
+   	<%= link_to 'Login', :login%>
+   
+   <div>
+
+  <%= yield %>
+
+</div>
