@@ -34,9 +34,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'debugger', group: [:development, :test]
 
 # connect to mongodb
-gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+gem 'mongoid', '~>4.0.0'
+
+# facebook login
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
+
 
