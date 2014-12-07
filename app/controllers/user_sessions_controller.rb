@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
   def create
     user = Consumer.where(:email => params[:user_sessions][:email].downcase).first
     if user.password == params[:user_sessions][:password]
-      redirect_to user
+      render 'new'
     else
       flash[:error] = 'Invalid email/password combination'
       render 'new'
