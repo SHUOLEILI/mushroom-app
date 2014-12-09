@@ -6,18 +6,15 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "jquery-2.1.1.min.js" %>
+  <%= javascript_include_tag "musicplayer.js" %>
+  <%= yield(:head) -%>
   <%= csrf_meta_tags %>
   
   
 </head>
 
-
-
- 
-
 <body> 
-
- 
 
 <%= yield %>
 

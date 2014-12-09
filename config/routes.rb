@@ -11,4 +11,6 @@ MushroomApp::Application.routes.draw do
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'fb_sessions#destroy', as: 'signout', via: [:get, :post]
 
+  match "user_sessions/upload", :as => "upload", via: [:get, :post]
+  match "user_sessions/delete", :as => "delete", via: [:get, :post]
 end

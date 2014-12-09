@@ -1,0 +1,57 @@
+<!--Dashboard -->
+<h1> My Mushroom </h1>
+
+<ul id="nav" style="list-style-type: none;">
+  <li id="media" style="display: inline;">Media Player</li>
+  <li id="sheet" style="display: inline;">Buy Music Sheet</li>
+  <li id="profile" style="display: inline;">My Profile</li>
+</ul>
+
+<!--Start of Media Player-->
+    <div id="mediadiv">
+      <div class="clear"></div>
+      <section id="sidebar">
+        <p>
+          Music Player
+
+          <section id="audio">
+            <p>
+            No mp3 is currently playing.
+          </section>
+            <p>
+          Upload a new MP3
+              <% if flash[:notice] %>
+            <p id="notice"><%= flash[:notice] %></p>
+            <% end %>
+              <%= form_tag upload_path, :method => "post", :multipart => true do %>
+                <%= file_field_tag 'upload[file]' %>
+                <%= submit_tag "Upload" %>
+              <% end %>
+      </section>
+      <section id="mainmp3">
+        <p>
+          Download and Delete Existing MP3's
+          <% if @musics != nil %>
+        <% @musics.each do |music| %>
+          <table>
+        <td><%= music.name %></td>
+            <td><%= link_to "HTML5 Audio", music.url, :class => "html5" %></td>
+        <%end%>
+        <%end%>
+      </table>
+      </section>
+      <div class="clear"></div>
+    </div>
+<!--End of Media Player-->
+
+<!--Start of Music Sheet-->
+    <div id="sheetdiv">
+
+    </div>
+<!--End of Music Sheet-->
+
+<!--Start of Profile-->
+    <div id="profilediv">
+
+    </div>
+<!--End of Profile-->
