@@ -1,10 +1,16 @@
 <!--Dashboard -->
 <h1> My Mushroom </h1>
 
+
+<% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+<% end %>
+
+
 <ul id="nav" style="list-style-type: none;">
-  <li id="media" style="display: inline;">Media Player</li>
-  <li id="sheet" style="display: inline;">Buy Music Sheet</li>
-  <li id="profile" style="display: inline;">My Profile</li>
+  <li id="media" style="display: inline;"><a onclick="showPlayer()">Media Player</a></li>
+  <li id="sheet" style="display: inline;"><a onclick="showSheet()">Buy Music Sheet</a></li>
+  <li id="profile" style="display: inline;"><a onclick="showProfile()">My Profile</a></li>
 </ul>
 
 <!--Start of Media Player-->
@@ -20,9 +26,7 @@
           </section>
             <p>
           Upload a new MP3
-              <% if flash[:notice] %>
-            <p id="notice"><%= flash[:notice] %></p>
-            <% end %>
+
               <%= form_tag upload_path, :method => "post", :multipart => true do %>
                 <%= file_field_tag 'upload[file]' %>
                 <%= submit_tag "Upload" %>
@@ -45,13 +49,45 @@
 <!--End of Media Player-->
 
 <!--Start of Music Sheet-->
-    <div id="sheetdiv">
+    <div id="sheetdiv" style="display:none;">
 
     </div>
 <!--End of Music Sheet-->
 
 <!--Start of Profile-->
-    <div id="profilediv">
+    <div id="profilediv" style="display:none;">
+      User Profile
 
+      <p>
+        <strong>Email:</strong>
+        <%= @consumer.email %>
+      </p>
+
+      <p>
+        <strong>Username:</strong>
+        <%= @consumer.username %>
+      </p>
+
+      <p>
+        <strong>Password:</strong>
+        <%= @consumer.password %>
+      </p>
+
+      <p>
+        <strong>Name:</strong>
+        <%= @consumer.name %>
+      </p>
+
+      <p>
+        <strong>Gender:</strong>
+        <%= @consumer.gender %>
+      </p>
+
+      <p>
+        <strong>Age:</strong>
+        <%= @consumer.age %>
+      </p>
+
+      <%= link_to 'Edit', edit_consumer_path(@consumer) %> |
     </div>
 <!--End of Profile-->

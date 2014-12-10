@@ -1,10 +1,8 @@
 class UserSessionsController < ApplicationController
-  def new
-    @user = Consumer.new
-  end
 
   def create
     user = Consumer.where(:email => params[:user_sessions][:email].downcase).first
+    @consumer = user
     if user.password == params[:user_sessions][:password]
       session[:email] = user.email
 
@@ -19,6 +17,9 @@ class UserSessionsController < ApplicationController
 
   def upload
     begin
+
+      @consumer = Consumer.where(:email => session[:email]).first
+
       name = params[:upload][:file].original_filename
       directory = "public/mp3"
       path = File.join(directory, name)

@@ -12,3 +12,21 @@ $(document).ready(function() {
         return false;
     });
 });
+
+function showPlayer() {
+    $('#mediadiv').show();
+    $('#sheetdiv').hide();
+    $('#profilediv').hide();
+}
+
+function showSheet() {
+    $('#mediadiv').hide();
+    $('#sheetdiv').show();
+    $('#profilediv').hide();
+}
+
+function showProfile() {
+    $('#mediadiv').hide();
+    $('#sheetdiv').hide();
+    $('#profilediv').show();
+}
