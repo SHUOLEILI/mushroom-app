@@ -1,0 +1,10 @@
+<h1> List of Consumers </h1>
+
+<% if @consumer != nil %>
+    <table>
+    <% @consumer.each do |consumer| %>
+          <td><%= consumer.name %></td>
+          <td><%= link_to 'Delete',  'admin_sessions/delete/?email=' + consumer.email%></td>
+    <%end%>
+    </table>
+<%end%>

@@ -9,7 +9,7 @@
 
 <ul id="nav" style="list-style-type: none;">
   <li id="media" style="display: inline;"><a onclick="showPlayer()">Media Player</a></li>
-  <li id="sheet" style="display: inline;"><a onclick="showSheet()">Buy Music Sheet</a></li>
+  <!--<li id="sheet" style="display: inline;"><a onclick="showSheet()">Buy Music Sheet</a></li>-->
   <li id="profile" style="display: inline;"><a onclick="showProfile()">My Profile</a></li>
 </ul>
 
@@ -36,13 +36,14 @@
         <p>
           Download and Delete Existing MP3's
           <% if @musics != nil %>
-        <% @musics.each do |music| %>
-          <table>
-        <td><%= music.name %></td>
-            <td><%= link_to "HTML5 Audio", music.url, :class => "html5" %></td>
+            <table>
+                <% @musics.each do |music| %>
+                    <td><%= music.name %></td>
+                    <td><%= link_to "HTML5 Audio", music.url, :class => "html5" %></td>
+                <%end%>
+            </table>
         <%end%>
-        <%end%>
-      </table>
+
       </section>
       <div class="clear"></div>
     </div>

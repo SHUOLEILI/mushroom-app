@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:admin, :url => url_for(:controller => 'admin', :action => 'create')) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :password1 %><br>
+        <%= f.text_field :password %>
+      </div>
+        <div class="field">
+          <%= f.label :password2 %><br>
+          <%= f.text_field :password %>
+        </div>
+      <div class="actions">
+        <%= f.submit %>
+        <%= link_to 'Back', :root %>
+      </div>
+    <% end %>
+  </div>
+</div>
