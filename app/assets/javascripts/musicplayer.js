@@ -17,16 +17,26 @@ function showPlayer() {
     $('#mediadiv').show();
     $('#sheetdiv').hide();
     $('#profilediv').hide();
+    $('#editProfilediv').hide()
 }
 
 function showSheet() {
     $('#mediadiv').hide();
     $('#sheetdiv').show();
     $('#profilediv').hide();
+    $('#editProfilediv').hide()
 }
 
 function showProfile() {
     $('#mediadiv').hide();
     $('#sheetdiv').hide();
     $('#profilediv').show();
+    $('#editProfilediv').hide()
+}
+
+function showEditProfile() {
+    $('#mediadiv').hide();
+    $('#sheetdiv').hide();
+    $('#profilediv').hide();
+    $('#editProfilediv').show()
 }

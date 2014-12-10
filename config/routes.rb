@@ -13,4 +13,5 @@ MushroomApp::Application.routes.draw do
 
   match "user_sessions/upload", :as => "upload", via: [:get, :post]
   match "user_sessions/delete", :as => "delete", via: [:get, :post]
+  match "user_sessions/editProfile", :as => "editProfile", via: [:get, :post]
 end

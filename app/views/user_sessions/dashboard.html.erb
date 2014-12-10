@@ -88,6 +88,15 @@
         <%= @consumer.age %>
       </p>
 
-      <%= link_to 'Edit', edit_consumer_path(@consumer) %> |
+      <a onclick="showEditProfile()">Edit</a>
     </div>
+<!--End of Profile-->
+
+<!--Start of Profile-->
+<div id="editProfilediv" style="display:none;">
+  Edit Profile
+
+  <%= render 'new_form' %>
+
+</div>
 <!--End of Profile-->
