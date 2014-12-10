@@ -4,11 +4,11 @@ MushroomApp::Application.routes.draw do
   resources :consumers
   resources :user_sessions
 
-  get 'login' => 'user_sessions#new', :as => :login
+  get '/login' => 'static#login', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
-  match 'auth/:provider/callback', to: 'fb_sessions#create', via: [:get, :post]
-  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  get '/signup' => 'static#reg', :as => :signup
+
   match 'signout', to: 'fb_sessions#destroy', as: 'signout', via: [:get, :post]
 
   match "user_sessions/upload", :as => "upload", via: [:get, :post]

@@ -5,7 +5,7 @@ class Consumer
   field :username, type:String
   field :password, type:String
   field :name, type: String
-  field :geneder, type: String
+  field :gender, type: String
   field :age, type: String
   
 end

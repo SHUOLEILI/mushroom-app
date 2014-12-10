@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
     if user.password == params[:user_sessions][:password]
       session[:email] = user.email
 
-      @musics = Music.all(email: email)
+      @musics = Music.all(email: user.email)
 
       render 'dashboard'
     else
@@ -43,7 +43,5 @@ class UserSessionsController < ApplicationController
       render :text => "No mp3 was found to delete!"
     end
   end
-
-
 
 end
